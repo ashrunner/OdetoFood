@@ -14,7 +14,6 @@ namespace OdetoFood.Controllers
 
         public ActionResult Search(string name = "french")
         {
-            throw new System.Exception("Something Terrible has happened");
             var message = Server.HtmlEncode(name);
             return Content(message);
             //return RedirectPermanent("http://microsoft.com");
