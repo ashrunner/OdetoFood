@@ -97,19 +97,19 @@ namespace OdetoFood.Controllers
             }
         }
 
-        static List<ResturantReview> _reviews = new List<ResturantReview>
+        static List<RestaurantReview> _reviews = new List<RestaurantReview>
         {
-            new ResturantReview {
+            new RestaurantReview {
                 Id=1,
                 Rating = 10,
             },
 
-            new ResturantReview {
+            new RestaurantReview {
                 Id=2,
                 Rating = 10,
             },
 
-             new ResturantReview {
+             new RestaurantReview {
                 Id=3,
                 Rating = 10,
             },

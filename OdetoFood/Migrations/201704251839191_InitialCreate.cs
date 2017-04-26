@@ -8,7 +8,7 @@ namespace OdetoFood.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Resturants",
+                "dbo.Restaurants",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -19,25 +19,25 @@ namespace OdetoFood.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.ResturantReviews",
+                "dbo.RestaurantReviews",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Rating = c.Int(nullable: false),
                         Body = c.String(),
-                        ResturantId = c.Int(nullable: false),
+                        RestaurantId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Resturants", t => t.ResturantId, cascadeDelete: true)
-                .Index(t => t.ResturantId);
+                .ForeignKey("dbo.Restaurants", t => t.RestaurantId, cascadeDelete: true)
+                .Index(t => t.RestaurantId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.ResturantReviews", "ResturantId", "dbo.Resturants");
-            DropIndex("dbo.ResturantReviews", new[] { "ResturantId" });
-            DropTable("dbo.ResturantReviews");
+            DropForeignKey("dbo.RestaurantReviews", "ResturantId", "dbo.Resturants");
+            DropIndex("dbo.RestaurantReviews", new[] { "ResturantId" });
+            DropTable("dbo.RestaurantReviews");
             DropTable("dbo.Resturants");
         }
     }

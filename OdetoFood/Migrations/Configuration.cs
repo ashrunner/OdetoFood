@@ -22,17 +22,17 @@ namespace OdetoFood.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            context.Resturants.AddOrUpdate(r => r.Name,
-                new Resturant { Name = "Sabatino's", City = "Baltimore", Country = "USA" },
-                new Resturant { Name = "Great Lake", City = "Baltimore", Country = "USA" },
-                new Resturant
+            context.Restaurants.AddOrUpdate(r => r.Name,
+                new Restaurant { Name = "Sabatino's", City = "Baltimore", Country = "USA" },
+                new Restaurant { Name = "Great Lake", City = "Baltimore", Country = "USA" },
+                new Restaurant
                 {
                     Name = "Smaka",
                     City = "Gotherburg",
                     Country = "Sweden",
                     Reviews =
-                    new List<ResturantReview> {
-                        new ResturantReview { Rating=9,Body="Great Food",ReviewerName="Jimbo" }
+                    new List<RestaurantReview> {
+                        new RestaurantReview { Rating=9,Body="Great Food",ReviewerName="Jimbo" }
                     }
 
                 });
