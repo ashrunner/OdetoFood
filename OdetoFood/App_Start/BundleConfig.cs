@@ -8,12 +8,23 @@ namespace OdetoFood
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            Bundle holderBundle = null;
+            holderBundle = new ScriptBundle("~/bundles/otf").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/jquery.unobtrusive*",
+                "~/Scripts/jquery.validate*"
+                );
+            bundles.Add(holderBundle);
+            holderBundle = new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js");
+            bundles.Add(holderBundle);
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -25,7 +36,21 @@ namespace OdetoFood
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Context/themes/base/css").Include(
+                "~/Context/themes/base/jquery.ui.core.css",
+                "~/Context/themes/base/jquery.ui.resizable.css",
+                "~/Context/themes/base/jquery.ui.selectable.css",
+                "~/Context/themes/base/jquery.ui.accordion.css",
+                "~/Context/themes/base/jquery.ui.autocomplete.css",
+                "~/Context/themes/base/jquery.ui.button.css",
+                "~/Context/themes/base/jquery.ui.dialog.css",
+                "~/Context/themes/base/jquery.ui.slider.css",
+                "~/Context/themes/base/jquery.ui.tabs.css",
+                "~/Context/themes/base/jquery.ui.datepicker.css",
+                "~/Context/themes/base/jquery.ui.progressbar.css",
+                "~/Context/themes/base/jquery.ui.theme.css"));
         }
     }
 }
